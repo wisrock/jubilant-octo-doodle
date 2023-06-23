@@ -1,0 +1,15 @@
+def binary_to_decimal(binary):
+    decimal = 0
+    power = 0
+
+    while binary != 0:
+        last_digit = binary % 10
+        decimal += last_digit * (2 ** power)
+        binary //= 10
+        power += 1
+
+    return decimal
+
+binary = input("Enter a binary number: ")
+decimal = binary_to_decimal(int(binary))
+print("Decimal equivalent:", decimal)
